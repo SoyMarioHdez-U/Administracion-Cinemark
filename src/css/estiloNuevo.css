@@ -2,6 +2,7 @@
     width: 900px;
     margin-top: 20px;
     margin-left: 170px;
+    height: auto;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -10,6 +11,14 @@
 }
 
 .btn{
-    margin-left: 20px;
+    
     margin-bottom: 20px
+}
+
+.FormularioFuncion{
+    width: 900px;
+    margin-top: 20px;
+    margin-left: 170px;
+    height: 480px;
+    font-family: 'Montserrat', sans-serif;
 }

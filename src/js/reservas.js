@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             
             // Limpiar la tabla antes de cargar los nuevos datos
-            dataTable.innerHTML = '<thead class="thead-light"><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Telefono</th><th>Correo</th><th>id_funcion</th><th>id_butaca<th>id_estado</th><th></th></tr></thead><tbody>'; // Elimina toda la datatable pero vuelve a recolocar los heads de datatable 
+            dataTable.innerHTML = '<thead class="thead-light"><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Teléfono</th><th>Correo Electrónico</th><th>Hora función</th><th>Butaca<th>Estado</th><th></th></tr></thead><tbody>'; // Elimina toda la datatable pero vuelve a recolocar los heads de datatable 
             
             // Insertar filas con los datos
             data.forEach(item => {
