@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Cinemark</title>
+
+
+    <link rel="icon" href="/SRC/Resources/Cinemark_-_2022_icon.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estiloAdministracion.css">
+    <link rel="stylesheet" href="../css/estiloNuevo.css">
+    
+     <!-- Font Awesome CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <a class="navbar-brand" href="/HTML/index.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Cinemark_Logo.svg" width="128" height="30" class="d-inline-block align-top" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../html/principal.html" style="font-family: 'Montserrat', sans-serif ; text-align: right;">Administración <span class="sr-only">(current)</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- AQUÍ VA EL CONTENIDO--> 
+    <div class="container mt-4">
+        <h3>Agregar nueva función</h3>
+        <form id="add-form">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="hora_inicio">Hora:</label>
+                    <input type="text" class="form-control" id="hora_inicio" name="hora_inicio">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fecha">Fecha:</label>
+                    <input type="text" class="form-control" id="fecha" name="fecha">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="id_pelicula">Número de Película:</label>
+                    <input type="number" class="form-control" id="id_pelicula" name="id_pelicula">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="id_sala">Número de Sala:</label>
+                    <input type="number" class="form-control" id="id_sala" name="id_sala">
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </form>
+    </div>
+    
+    <script src="../js/nuevaFuncion.js"></script>
+    
+    
+    
+</body>
+
+<footer class="bg-body-tertiary text-center text-lg-start" style="background-color: lightgray;">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="/HTML/index.html">Cinemark Santa Ana</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>
+    <!-- Copyright -->
+  </footer>
+</html>

@@ -1,0 +1,15 @@
+.Formulario{
+    width: 900px;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Formulario h3{
+    font-weight: bold;
+}
+
+.btn{
+    margin-left: 20px;
+    margin-bottom: 20px
+}

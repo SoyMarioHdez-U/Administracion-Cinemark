@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Cinemark</title>
+
+
+    <link rel="icon" href="/SRC/Resources/Cinemark_-_2022_icon.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estiloAdministracion.css">
+    
+     <!-- Font Awesome CSS -->
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <a class="navbar-brand" href="/HTML/index.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Cinemark_Logo.svg" width="128" height="30" class="d-inline-block align-top" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../html/principal.html" style="font-family: 'Montserrat', sans-serif ; text-align: right;">Administración <span class="sr-only">(current)</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- AQUÍ VA EL CONTENIDO--> 
+    <div class="container_peliculasAdmin" style="margin-top: 20px; margin-left: 165px; margin-right: 165px;">
+        <div class="encabezado_peliculas" style="display: flex; justify-content: space-between;">
+            <div class="titulos">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-weight: bolder;">Funciones</h3>
+                <p style="font-family: 'Montserrat', sans-serif; margin-top: 5px;">Listado de todas las funciones</p>
+            </div>
+            <div class="ordenamiento" style="display: flex; align-items: center;">
+                <p style="margin-right: 15px; margin-top: 10px;">Ordenar por:    </p>
+                <select id="ordenarPor" style="font-family: 'Montserrat', sans-serif; margin-right: 10px;">
+                    <option value="" disabled selected>Seleccionar</option>
+                    <option value="titulo-asc">Título A~Z</option>
+                    <option value="titulo-desc">Título Z~A</option>
+                    <option value="duracion-asc">Duración (menor a mayor)</option>
+                    <option value="duracion-desc">Duración (mayor a menor)</option>
+                    <option value="estado">Estado</option>
+                    <option value="idioma">Idioma</option>
+                </select>
+                
+                <a href="../html/nuevaFuncion.html" class="btn btn-danger" role="button">Nueva función</a>
+
+            </div>
+            
+        </div>
+        
+
+        <div class="table-container">
+            <table id="tablaPeliculas">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PELÍCULA</th>
+                        <th>DURACIÓN</th>
+                        <th>DIRECTOR</th>
+                        <th>IDIOMA</th>
+                        <th>ESTADO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <a href="../html/principal.html" class="back-button" style="margin-top: 10px; margin-bottom: 30px; margin-left: 165px; display: inline-block;">Volver</a>
+    </div>
+    
+
+    <script src="../js/funciones.js"></script>
+    
+    
+    
+</body>
+
+<footer class="bg-body-tertiary text-center text-lg-start" style="background-color: lightgray;">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-body" href="/HTML/index.html">Cinemark Santa Ana</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>
+
+
+    <nav class="main-containers">
+        <label for="button"><button id= btn-newf type="button" class="btn btn-primary">Nueva función</button></label>
+        <label for="button"><button id= btn-regre type="button" class="btn btn-primary">Regresar</button></label>
+    </nav>

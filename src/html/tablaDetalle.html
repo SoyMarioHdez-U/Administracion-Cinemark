@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detallePelicula</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estiloAdministracion.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <label for="button"><button id= btn-regre type="button" class="btn btn-primary">Regresar</button></label>
+    </nav>
+    
+    <div class="Form-Detalles">
+        <h3>Detalles de la Pelicula</h3>
+        <form id="detail-form">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control col-6" id="nombre" name="nombre">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripcion:</label>
+                <input type="text" class="form-control col-6" id="descripcion" name="descripcion">
+            </div>
+            <div class="form-group">
+                <label for="director">Director:</label>
+                <input type="text" class="form-control col-6" id="director" name="director">
+            </div>
+            <div class="form-group">
+                <label for="duracion">Duracion:</label>
+                <input type="number"  class="form-control col-6" id="duracion" name="duracion" >
+            </div>
+            <div class="form-group">
+                <label for="imagen">Imagen:</label>
+                <input type="file" class="form-control col-6" id="imagen" name="imagen">
+            </div>
+            <div class="form-group" style="display: none">
+                <label for="ruta">Ruta:</label>
+                <input type="text" class="form-control col-6" id="ruta" name="ruta">
+            </div>
+            <div id="Foto">
+
+            </div>
+            <div class="form-group">
+                <label for="video">Video:</label>
+                <input type="text" class="form-control col-6" id="video" name="video">
+            </div>
+            <div id="Vid">
+            </div>
+            <div class="form-group">
+                <label for="id_idioma">Idioma:</label>
+                <input type="number" class="form-control col-6" id="id_idioma" name="id_idioma">
+            </div>
+            <div class="form-group">
+                <label for="id_estado">Estado:</label>
+                <input type="number" class="form-control col-6" id="id_estado" name="id_estado">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Editar</button>
+            <button id="delete-btn" type="button" class="btn btn-danger">Eliminar</button>
+        </form>
+    </div>
+
+    
+    
+    
+    
+
+    <script src="../js/tablaDetalle.js"></script>
+
+</body>
+</html>
