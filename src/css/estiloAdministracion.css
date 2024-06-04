@@ -147,3 +147,22 @@ tr:hover {
 .main-containers {
     display: none;
 }
+
+.main-container-detalles{
+    margin-top: 20px;
+    padding-left: 170px;
+    width: 1000px;
+}
+
+.imagenPeli{
+    height: 400px;
+}
+
+.back-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container_peliculasAdmin{
+    margin-left: 200px;
+}

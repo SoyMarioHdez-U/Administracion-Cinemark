@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('descripcion').value = data[0].descripcion;
         document.getElementById('director').value = data[0].director;
         document.getElementById('duracion').value = data[0].duracion;
-        foto.innerHTML = `<img src="${data[0].imagen}"></img>`
+        foto.innerHTML = `<img class='imagenPeli' src="${data[0].imagen}"></img>`
         document.getElementById('video').value = data[0].video;
         vid.innerHTML = `${data[0].video}`
         document.getElementById('ruta').value = data[0].imagen;
