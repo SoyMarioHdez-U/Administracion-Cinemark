@@ -1,36 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
     const addForm = document.getElementById('add-form');
-    const regresar = document.getElementById('btn-regre')
+    const idiomaSelect = document.getElementById('id_idioma')
+    const estadoSelect = document.getElementById('id_estado')
     
+    async function generarIdiomas() {
+        try {
+            const response = await fetch('http://localhost:3000/idiomas');
+            const data = await response.json();
+            
+            data.forEach(dato => {
+                const option = new Option(dato.idioma, dato.id_idioma);
+                idiomaSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar idiomas:', error);
+        }
+    }
+    generarIdiomas();
+
+    async function generarEstados() {
+        try {
+            const response = await fetch('http://localhost:3000/estados');
+            const data = await response.json();
+            
+            data.forEach(dato => {
+                const option = new Option(dato.estado, dato.id_estado);
+                estadoSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar estados:', error);
+        }
+    }
+    generarEstados();
 
     addForm.addEventListener('submit', async (e) => {
-            
         e.preventDefault();
+        
         const formData = new FormData(addForm);
-        const requestData = {
-            method: 'POST',
-            body: formData,//JSON.stringify(Object.fromEntries(formData.entries())),
-            //headers: {
-            //    'Content-Type': 'application/json'
-            //}
-        };
-        console.log(requestData)
 
+        
+        const selectI = idiomaSelect.value;
+        const selectE = estadoSelect.value;
+        
+        formData.append('id_idioma', selectI)
+        formData.append('id_estado', selectE)
+        
         try {
-            const response = await fetch('http://localhost:3000/peliculas', requestData);
+            const response = await fetch('http://localhost:3000/peliculas', {
+                method: 'POST',
+                body: formData
+            });
+            
             if (response.ok) {
-                
-                window.location.href = 'tabla.html';
+                window.location.href = 'peliculas.html';
             } else {
-                console.error('Error al agregar registro:', response.statusText);
+                console.error('Error al agregar película:', response.statusText);
             }
         } catch (error) {
-            console.error('Error al agregar registro:', error);
+            console.error('Error al agregar película:', error);
         }
     });
-    regresar.addEventListener('click', (e) =>{
-        window.location.href = 'tabla.html'
+
+    // Agregar evento al botón de regresar
+    const regresarBtn = document.getElementById('btn-regre');
+    regresarBtn.addEventListener('click', () => {
+        window.location.href = 'peliculas.html';
     });
-// Cargar datos al cargar la página
-    loadData();
+
+    
 });

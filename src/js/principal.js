@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'funciones.html'
     });
     peliculas.addEventListener('click', (e) =>{
-        window.location.href = 'tabla.html'
+        window.location.href = 'peliculas.html'
     });
     reservas.addEventListener('click', (e) =>{
         window.location.href = 'reservas.html'

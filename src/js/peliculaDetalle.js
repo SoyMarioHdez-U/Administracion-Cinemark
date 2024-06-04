@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     const regresar = document.getElementById('btn-regre')
-    // Función para cargar los detalles del registro
+    const idiomaSelect = document.getElementById('id_idioma');
+    const estadoSelect = document.getElementById('id_estado')
+
+
     async function loadDetail() {
         try {
             const response = await fetch(`http://localhost:3000/peliculas/${id}`);
@@ -18,6 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    async function generarIdiomas() {
+        try {
+            const response = await fetch('http://localhost:3000/idiomas');
+            const data = await response.json();
+            
+            data.forEach(dato => {
+                const option = new Option(dato.idioma, dato.id_idioma);
+                idiomaSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar idiomas:', error);
+        }
+    }
+    generarIdiomas();
+
+    async function generarEstados() {
+        try {
+            const response = await fetch('http://localhost:3000/estados');
+            const data = await response.json();
+            
+            data.forEach(dato => {
+                const option = new Option(dato.estado, dato.id_estado);
+                estadoSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error al cargar estados:', error);
+        }
+    }
+    generarEstados();
+
 //Función para llenar el formulario con los datos recibidos
     function populateForm(data) {
         console.log('Datos del form',data);
@@ -25,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('descripcion').value = data[0].descripcion;
         document.getElementById('director').value = data[0].director;
         document.getElementById('duracion').value = data[0].duracion;
-        foto.innerHTML = `<img class='imagenPeli' src="${data[0].imagen}"></img>`
+        foto.innerHTML = `<img src="${data[0].imagen}"></img>`
         document.getElementById('video').value = data[0].video;
         vid.innerHTML = `${data[0].video}`
         document.getElementById('ruta').value = data[0].imagen;
@@ -36,7 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para enviar los datos editados al servidor
     detailForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const formData = new FormData(detailForm);
+        const formData = new FormData(detailForm)
+
+        const selectI = idiomaSelect.value;
+        const selectE = estadoSelect.value;
+
+        formData.append('id_idioma', selectI)
+        formData.append('id_estado', selectE)
+
         const requestData = {
             method: 'PUT',
             body: formData,
@@ -46,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`http://localhost:3000/peliculas/${id}`, requestData);
             if (response.ok) {
                 // Si la edición fue exitosa, redirigir a index.html
-                window.location.href = 'tabla.html';
+                window.location.href = 'peliculas.html';
             } else {
                 console.error('Error al editar registro:', response.statusText);
             }
@@ -63,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             if (response.ok) {
                 // Si la eliminación fue exitosa, redirigir a index.html
-                window.location.href = 'tabla.html';
+                window.location.href = 'peliculas.html';
             } else {
                 console.error('Error al eliminar registro:', response.statusText);
             }
@@ -72,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     regresar.addEventListener('click', (e) =>{
-        window.location.href = 'tabla.html'
+        window.location.href = 'peliculas.html'
     });
 
     // Cargar detalles al cargar la página

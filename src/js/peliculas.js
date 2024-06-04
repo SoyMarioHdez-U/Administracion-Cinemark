@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(data)
             // Insertar filas con los datos
             data.forEach(item => {
-                dataTable.innerHTML += `<tr data-id="${item.id_pelicula}"><td>${item.id_pelicula}</td><td>${item.nombre}</td><td>${item.descripcion}</td><td>${item.director}</td><td>${item.duracion}</td><td>${item.id_idioma}</td><td>${item.id_estado}</td><td><button class="btn btn-secondary detail-btn">Detalle</button></td></tr>`;
+                dataTable.innerHTML += `<tr data-id="${item.id_pelicula}"><td>${item.id_pelicula}</td><td>${item.nombre}</td><td>${item.descripcion}</td><td>${item.director}</td><td>${item.duracion}</td><td>${item.idioma}</td><td>${item.estado}</td><td><button class="btn btn-secondary detail-btn">Detalle</button></td></tr>`;
             });
 
             dataTable.innerHTML += '</tbody>'; // Cierra el table body
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const id = row.dataset.id;
                     console.log(row)
                     console.log(id)
-                    window.location.href = `tablaDetalle.html?id=${id}`; // Te manda a detalle html
+                    window.location.href = `peliculaDetalle.html?id=${id}`; // Te manda a detalle html
                 });
             });
         } catch (error) {
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${item.descripcion}</td>
                     <td>${item.director}</td>
                     <td>${item.duracion}</td>
-                    <td>${item.id_idioma}</td>
-                    <td>${item.id_estado}</td>
+                    <td>${item.idioma}</td>
+                    <td>${item.estado}</td>
                     <td><button class="btn btn-secondary detail-btn">Detalle</button></td>
                 </tr>`;
         });

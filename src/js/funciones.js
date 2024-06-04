@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${item.id_funcion}</td>
                     <td>${item.hora_inicio}</td>
                     <td>${item.fecha}</td>
-                    <td>${item.id_pelicula}</td>
-                    <td>${item.id_sala}</td>
+                    <td>${item.nombre}</td>
+                    <td>${item.sala}</td>
                     <td><button class="btn btn-secondary detail-btn">Detalle</button></td>
                 </tr>`;
         });

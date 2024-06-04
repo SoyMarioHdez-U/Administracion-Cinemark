@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             
             // Limpiar la tabla antes de cargar los nuevos datos
-            dataTable.innerHTML = '<thead class="thead-light"><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Telefono</th><th>Correo</th><th>Función</th><th>id_butaca<th>Estado</th><th></th></tr></thead><tbody>'; // Elimina toda la datatable pero vuelve a recolocar los heads de datatable 
+            dataTable.innerHTML = '<thead class="thead-light"><tr><th>#</th><th>Nombre</th><th>Apellido</th><th>Telefono</th><th>Correo</th><th>id_funcion</th><th>id_butaca<th>id_estado</th><th></th></tr></thead><tbody>'; // Elimina toda la datatable pero vuelve a recolocar los heads de datatable 
             
             // Insertar filas con los datos
             data.forEach(item => {
-                dataTable.innerHTML += `<tr data-id="${item.id_reserva}"><td>${item.id_reserva}</td><td>${item.nombre}</td><td>${item.apellido}</td><td>${item.telefono}</td><td>${item.correo}</td><td>${item.id_funcion}</td><td>${item.id_butaca}</td><td>${item.id_estado}</td><td><button class="btn btn-secondary detail-btn">Detalle</button></td></tr>`;
+                dataTable.innerHTML += `<tr data-id="${item.id_reserva}"><td>${item.id_reserva}</td><td>${item.nombre}</td><td>${item.apellido}</td><td>${item.telefono}</td><td>${item.correo}</td><td>${item.hora_inicio}</td><td>${item.butaca}</td><td>${item.estado}</td><td><button class="btn btn-secondary detail-btn">Detalle</button></td></tr>`;
             });
 
             dataTable.innerHTML += '</tbody>'; // Cierra el table body
@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    
     //funcion del boton que me lleva a la pagina de agregar pelicula
     newP.addEventListener('click', (e) =>{
         window.location.href = 'nuevaReserva.html'
