@@ -166,3 +166,12 @@ tr:hover {
 .container_peliculasAdmin{
     margin-left: 200px;
 }
+
+.imagenPeli{
+    height: 400px;
+
+}
+
+.imagenPeli img{
+    height: 400px;
+}

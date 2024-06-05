@@ -6,6 +6,7 @@
     <title>detallePelicula</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/estiloAdministracion.css">
+    <link rel="icon" href="../src/Cinemark_Logo.svg" type="image/png">
     
 </head>
 <body>
@@ -39,15 +40,15 @@
                     <input type="text" class="form-control col-6" id="fecha" name="fecha">
                 </div>
                 <div class="form-group">
-                    <label for="id_pelicula">ID pelicula:</label>
-                    <select id="id_pelicula" type = "number" ></select>
+                    <label for="id_pelicula">Película:</label>
+                    <select id="id_pelicula" class="form-control" type = "number" ></select>
                 </div>
                 <div class="form-group">
                     <label for="id_sala">Sala:</label>
-                    <select id="id_sala" type = "number" ></select>
+                    <select id="id_sala" class="form-control col-2" type = "number" ></select>
                 </div>
                 <button type="submit" class="btn btn-primary">Editar</button>
-                <button id="delete-btn" type="button" class="btn btn-danger">Eliminar</button>
+                <button id="delete-btn"  type="button" class="btn btn-danger">Eliminar</button>
             </form>
         </div>
         <label for="button"><button id= btn-regre type="button" class="back-button">Regresar</button></label>
